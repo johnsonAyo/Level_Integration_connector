@@ -1,0 +1,17 @@
+{
+  "name": "level-integration-connector",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"cd apps/backend && npm run start:dev\" \"cd apps/web && npm run dev\" \"cd apps/mock-api && npm run dev\"",
+    "typecheck": "cd apps/backend && npm run lint && npm run build && cd ../web && npm run lint && npm run build && cd ../mock-api && npm run typecheck",
+    "test": "cd apps/web && npm run test:e2e",
+    "test:backend": "cd apps/backend && npm run test"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

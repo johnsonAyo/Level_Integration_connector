@@ -1,0 +1,5 @@
+external_id,first_name,last_name,email,hourly_rate,active
+E-2001,Charles,Babbage,charles@api.example.com,22.50,true
+E-2002,Margaret,Hamilton,margaret@api.example.com,30.00,true
+E-2003,Katherine,Johnson,,28.75,false
+E-2004,Bill,Gates,bill@api.example.com,45.00,true

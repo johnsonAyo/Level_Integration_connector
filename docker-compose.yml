@@ -1,0 +1,52 @@
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: workforce_db
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d workforce_db"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+
+  mock-provider:
+    build:
+      context: .
+      dockerfile: apps/mock-api/Dockerfile
+    ports:
+      - "4001:4001"
+    volumes:
+      - ./data:/app/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+    volumes:
+      - ./apps/backend/data:/app/data
+    environment:
+      DATABASE_URL: postgresql://user:password@db:5432/workforce_db
+      NODE_ENV: production
+      MOCK_API_URL: http://mock-provider:4001
+    ports:
+      - "4000:4000"
+    depends_on:
+      db:
+        condition: service_healthy
+      mock-provider:
+        condition: service_started
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:4000
+    depends_on:
+      - backend

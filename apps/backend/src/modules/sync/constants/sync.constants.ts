@@ -1,0 +1,9 @@
+export const SYNC_CONSTANTS = {
+  DEFAULT_MOCK_API_URL: 'http://localhost:4001',
+  MAX_SHIFT_HOURS: 14,
+  CENTS_PER_UNIT: 100,
+  MINUTES_PER_HOUR: 60,
+  MS_PER_MINUTE: 60000,
+  DATA_DIR_PROD: '/app/data',
+  DATA_DIR_DEV: 'data',
+};
