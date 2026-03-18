@@ -84,7 +84,6 @@ describe('SyncService', () => {
 
       expect(stats.inserted).toBe(1);
       expect(stats.updated).toBe(1);
-      // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(employeesRepo.upsert).toHaveBeenCalledTimes(2);
     });
   });

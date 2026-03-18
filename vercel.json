@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/apps/backend/src/main.ts"
+    },
+    {
+      "source": "/mock/:path*",
+      "destination": "/apps/mock-api/src/index.ts"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/apps/web"
+    }
+  ]
+}

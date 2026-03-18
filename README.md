@@ -40,11 +40,14 @@ To run the backend unit tests (covers overlap detection, earnings math, and upse
 cd apps/backend && npm run test
 ```
 
-## 🏗 Developing Locally (Without Docker)
+## 🏗 Developing Locally
 
-If you prefer to run the project without Docker:
+If you prefer to run the app services natively (only Postgres runs in Docker):
 
 ```bash
+# 0. Ensure you're using the correct Node version (requires nvm)
+nvm use
+
 # 1. Install dependencies from the root
 npm install
 
@@ -52,7 +55,7 @@ npm install
 docker compose up db -d
 
 # 3. Run database migrations
-cd apps/backend && npm run migrate
+cd apps/backend && npm run db:migrate
 
 # 4. Go back to the root and start the dev servers
 cd ../../ 
@@ -95,7 +98,7 @@ The ingest pipeline guarantees bad data will never corrupt the Postgres database
 - **Strict ISO 8601 Timestamps**: Rejects loosely formatted, invalid strings to guarantee uniform UTC `start_at` and `end_at` persistence.
 - **Ghost Reference Protection**: Performs relational safety checks; if a shift references an `employee_external_id` that does not exist in the database, the shift is logged as an error and skipped.
 
-*Note: You will see intentional "bad data" rows within the `data/*.csv` files that demonstrate these error-handling mechanisms without halting the overall sync!*
+*Note: there are "bad data" rows within the `data/*.csv` files that demonstrate these error-handling mechanisms without halting the overall sync!*
 
 
 ## 🧪 Testing

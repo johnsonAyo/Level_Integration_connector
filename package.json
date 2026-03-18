@@ -11,6 +11,9 @@
     "packages/*",
     "apps/*"
   ],
+  "engines": {
+    "node": ">=22"
+  },
   "devDependencies": {
     "concurrently": "^9.2.1"
   }
