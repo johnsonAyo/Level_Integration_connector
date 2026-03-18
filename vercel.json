@@ -1,17 +1,32 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "apps/backend/src/main.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "apps/mock-api/src/index.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "apps/web/package.json",
+      "use": "@vercel/next"
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "/apps/backend/src/main.ts"
+      "destination": "apps/backend/src/main.ts"
     },
     {
       "source": "/mock/:path*",
-      "destination": "/apps/mock-api/src/index.ts"
+      "destination": "apps/mock-api/src/index.ts"
     },
     {
       "source": "/(.*)",
-      "destination": "/apps/web"
+      "destination": "apps/web/$1"
     }
   ]
 }
+
