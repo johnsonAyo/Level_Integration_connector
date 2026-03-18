@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { EmployeesRepository } from './employees.repository';
 import { ShiftsRepository } from '../sync/repositories/shifts.repository';
-import { Employee, Shift } from '@/db/schema';
+import { Employee, Shift } from '../../db/schema';
 import type {
   EmployeeWithSummary,
   EmployeeShiftsResponse,

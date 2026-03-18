@@ -2,15 +2,15 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { triggerSync } from '@/lib/api';
-import { Button } from '@/components/ui/button';
+import { triggerSync } from '../lib/api';
+import { Button } from './ui/button';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Loader2, RefreshCw } from 'lucide-react';
+} from './ui/dropdown-menu';
+import { Loader2, RefreshCw, Play, FileText, ChevronDown } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface SyncButtonProps {

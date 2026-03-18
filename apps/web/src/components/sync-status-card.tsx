@@ -1,7 +1,7 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader } from "./ui/card";
+import { Badge } from "./ui/badge";
 import { CheckCircle2, AlertCircle, Clock, AlertTriangle } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 import { type SyncRun } from '@level/api-contract';
 import {
     Dialog,
@@ -10,11 +10,11 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipProvider } from '@/components/ui/tooltip';
-import { useSyncStats } from "@/hooks/use-sync-stats";
-import { SyncRunsTooltipContent } from "@/components/sync-runs-tooltip";
+} from "./ui/dialog"
+import { Button } from "./ui/button";
+import { Tooltip, TooltipProvider } from './ui/tooltip';
+import { useSyncStats } from "../hooks/use-sync-stats";
+import { SyncRunsTooltipContent } from "./sync-runs-tooltip";
 
 interface SyncStatusCardProps {
     syncRuns?: SyncRun[];

@@ -7,12 +7,12 @@ import {
     DialogHeader,
     DialogTitle,
     DialogDescription,
-} from '@/components/ui/dialog';
+} from './ui/dialog';
 import { useEffect, useState } from 'react';
-import { fetchEmployeeShifts } from '@/lib/api';
-import { Skeleton } from '@/components/ui/skeleton';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { formatCurrency, formatDuration } from '@/lib/utils';
+import { fetchEmployeeShifts } from '../lib/api';
+import { Skeleton } from './ui/skeleton';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
+import { formatCurrency, formatDuration } from '../lib/utils';
 
 interface EmployeeModalProps {
     employee: EmployeeWithSummary | null;

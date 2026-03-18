@@ -8,9 +8,9 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from '@/components/ui/table';
-import { Badge } from '@/components/ui/badge';
-import { cn } from '@/lib/utils';
+} from './ui/table';
+import { Badge } from './ui/badge';
+import { cn } from '../lib/utils';
 import { useState } from 'react';
 import { EmployeeModal } from './employee-modal';
 

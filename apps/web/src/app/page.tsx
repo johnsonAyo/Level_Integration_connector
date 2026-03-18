@@ -1,10 +1,10 @@
 'use client';
 
-import { fetchEmployees, fetchSyncRuns } from '@/lib/api';
-import { SyncButton } from '@/components/sync-button';
-import { SyncStatusCard } from '@/components/sync-status-card';
-import { EmployeeTable } from '@/components/employee-table';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { fetchEmployees, fetchSyncRuns } from '../lib/api';
+import { SyncButton } from '../components/sync-button';
+import { SyncStatusCard } from '../components/sync-status-card';
+import { EmployeeTable } from '../components/employee-table';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { useEffect, useState } from 'react';
 import type { EmployeeWithSummary, SyncRun } from '@level/api-contract';
 
