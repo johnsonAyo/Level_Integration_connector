@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"cd apps/backend && npm run start:dev\" \"cd apps/web && npm run dev\" \"cd apps/mock-api && npm run dev\"",
-    "build": "npm run build --prefix apps/backend && npm run build --prefix apps/web && npm run build --prefix apps/mock-api",
+    "build": "npm run build --prefix packages/api-contract && npm run build --prefix apps/backend && npm run build --prefix apps/web && npm run build --prefix apps/mock-api",
     "typecheck": "cd apps/backend && npm run lint && npm run build && cd ../web && npm run lint && npm run build && cd ../mock-api && npm run typecheck",
     "test": "cd apps/web && npm run test:e2e",
     "test:backend": "cd apps/backend && npm run test"
