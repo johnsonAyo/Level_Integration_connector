@@ -8,10 +8,6 @@
     {
       "src": "apps/mock-api/src/index.ts",
       "use": "@vercel/node"
-    },
-    {
-      "src": "apps/web/package.json",
-      "use": "@vercel/next"
     }
   ],
   "rewrites": [
@@ -24,8 +20,8 @@
       "destination": "apps/mock-api/src/index.ts"
     },
     {
-      "source": "/(.*)",
-      "destination": "apps/web/$1"
+      "source": "/((?!api|mock|_next|static|favicon.ico).*)",
+      "destination": "/apps/web/$1"
     }
   ]
 }

@@ -12,7 +12,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button";
-import { Tooltip } from '@/components/ui/tooltip';
+import { Tooltip, TooltipProvider } from '@/components/ui/tooltip';
 import { useSyncStats } from "@/hooks/use-sync-stats";
 import { SyncRunsTooltipContent } from "@/components/sync-runs-tooltip";
 
@@ -36,11 +36,13 @@ export function SyncStatusCard({ syncRuns = [] }: SyncStatusCardProps) {
                         </div>
                         <span className="text-sm font-semibold text-neutral-600 tracking-tight ml-2">Sync Summary</span>
                         {syncRuns.length > 0 && (
-                            <Tooltip content={<SyncRunsTooltipContent syncRuns={syncRuns} />}>
-                                <Badge variant="outline" className="ml-2 h-5 px-1.5 text-[0.75rem] font-bold bg-neutral-50/50 text-neutral-500 border-neutral-200 cursor-default">
-                                    {syncRuns.length} {syncRuns.length === 1 ? 'RUN' : 'RUNS'}
-                                </Badge>
-                            </Tooltip>
+                            <TooltipProvider delayDuration={200}>
+                                <Tooltip content={<SyncRunsTooltipContent syncRuns={syncRuns} />}>
+                                    <Badge variant="outline" className="ml-2 h-5 px-1.5 text-[0.75rem] font-bold bg-neutral-50/50 text-neutral-500 border-neutral-200 cursor-default">
+                                        {syncRuns.length} {syncRuns.length === 1 ? 'RUN' : 'RUNS'}
+                                    </Badge>
+                                </Tooltip>
+                            </TooltipProvider>
                         )}
                     </div>
                     {stats && (
