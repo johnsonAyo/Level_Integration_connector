@@ -1,4 +1,4 @@
-import { type SyncRun } from '@level/api-contract';
+import { type SyncRun } from '../../../../packages/api-contract/src';
 
 interface SyncRunsTooltipContentProps {
     syncRuns: SyncRun[];

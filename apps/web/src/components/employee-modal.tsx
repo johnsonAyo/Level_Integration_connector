@@ -1,6 +1,6 @@
 'use client';
 
-import type { EmployeeWithSummary, EmployeeShiftsResponse } from '@level/api-contract';
+import type { EmployeeWithSummary, EmployeeShiftsResponse } from '../../../../packages/api-contract/src';
 import {
     Dialog,
     DialogContent,

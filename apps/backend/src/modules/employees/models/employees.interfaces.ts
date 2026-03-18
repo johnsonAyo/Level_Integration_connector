@@ -1,6 +1,6 @@
 import type {
   EmployeeWithSummary,
   EmployeeShiftsResponse,
-} from '@level/api-contract';
+} from '../../../../../../packages/api-contract/src';
 
 export { EmployeeWithSummary, EmployeeShiftsResponse };

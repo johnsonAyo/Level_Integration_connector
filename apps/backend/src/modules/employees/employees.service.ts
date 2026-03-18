@@ -6,7 +6,7 @@ import type {
   EmployeeWithSummary,
   EmployeeShiftsResponse,
   SyncSource,
-} from '@level/api-contract';
+} from '../../../../../packages/api-contract/src';
 import { DAYS_FOR_EARNINGS } from './constants/constants';
 import {
   GetShiftsQuerySchema,

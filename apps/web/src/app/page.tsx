@@ -6,7 +6,7 @@ import { SyncStatusCard } from '../components/sync-status-card';
 import { EmployeeTable } from '../components/employee-table';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { useEffect, useState } from 'react';
-import type { EmployeeWithSummary, SyncRun } from '@level/api-contract';
+import type { EmployeeWithSummary, SyncRun } from '../../../../packages/api-contract/src';
 
 export default function Home() {
   const [employees, setEmployees] = useState<EmployeeWithSummary[]>([]);

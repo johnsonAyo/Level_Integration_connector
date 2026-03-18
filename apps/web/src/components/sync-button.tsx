@@ -17,7 +17,7 @@ interface SyncButtonProps {
     onSyncComplete?: () => void;
 }
 
-import { SyncRun } from '@level/api-contract';
+import { SyncRun } from '../../../../packages/api-contract/src';
 
 interface SyncButtonProps {
     onSyncComplete?: () => void;

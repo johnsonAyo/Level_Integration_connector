@@ -1,6 +1,6 @@
 'use client';
 
-import type { EmployeeWithSummary } from '@level/api-contract';
+import type { EmployeeWithSummary } from '../../../../packages/api-contract/src';
 import {
     Table,
     TableBody,

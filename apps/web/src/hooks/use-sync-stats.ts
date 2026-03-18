@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { type SyncRun } from '@level/api-contract';
+import { type SyncRun } from '../../../../packages/api-contract/src';
 
 /**
  * Custom hook to calculate synchronization statistics

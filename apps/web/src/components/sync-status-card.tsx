@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { CheckCircle2, AlertCircle, Clock, AlertTriangle } from "lucide-react";
 import { cn } from "../lib/utils";
-import { type SyncRun } from '@level/api-contract';
+import { type SyncRun } from '../../../../packages/api-contract/src';
 import {
     Dialog,
     DialogContent,
