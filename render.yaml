@@ -11,3 +11,23 @@ services:
         value: 22.x
       - key: PORT
         value: 10000
+
+  - type: web
+    name: level-web
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build --workspace=@level/web
+    startCommand: npm run start --workspace=@level/web
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        value: https://level-backend.onrender.com # Change this if your URL is different
+
+  - type: web
+    name: mock-api
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build --workspace=mock-api
+    startCommand: npm run start --workspace=mock-api
+    envVars:
+      - key: PORT
+        value: 4000
