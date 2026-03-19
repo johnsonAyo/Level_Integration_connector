@@ -1,0 +1,10 @@
+node_modules
+dist
+.next
+out
+.vercel
+.env*
+*.log
+docker-compose.yml
+ARCHITECTURE.md
+README.md

@@ -9,6 +9,7 @@
       "source": "/mock/:path*",
       "destination": "apps/mock-api/src/index.ts"
     }
-  ]
+  ],
+  "outputDirectory": "apps/web/.next"
 }
 
