@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: level-backend
+    env: node
+    region: ohio
+    plan: free
+    buildCommand: npm install && npm run build --workspace=@level/backend
+    startCommand: npm run start:prod --workspace=@level/backend
+    envVars:
+      - key: NODE_VERSION
+        value: 22.x
+      - key: PORT
+        value: 10000
